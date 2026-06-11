@@ -32,27 +32,55 @@
 \setlength{\parskip}{4pt}
 \setlength{\parindent}{0pt}
 
+% ---- Editable title-page fields ----
+\newcommand{\Title}{Retrieval-Time Backdoor Detection in RAG-based LLMs via Rank-Faithfulness Consistency Checking}
+\newcommand{\Author}{Sarath Adukkadukkam}
+\newcommand{\Email}{s.adukkadukkam@oth-aw.de}
+\newcommand{\ExamID}{[your exam ID]}          % TODO: set your AI-Security exam ID, or delete the line in the cover
+\newcommand{\Module}{AI Security and Privacy}
+\newcommand{\Programme}{Master Artificial Intelligence for Industrial Applications}
+\newcommand{\Supervisor}{Prof.\ Dr.\ Patrick Levi}
+\newcommand{\Semester}{Summer Semester 2026}
+
 %==============================================================
 \begin{document}
 
-%---------------- COVER PAGE ----------------
+%---------------- COVER PAGE (OTH style) ----------------
 \begin{titlepage}
 \centering
-\vspace*{2.5cm}
-{\large AI Security and Privacy --- Project Work (Exam)\par}
-\vspace{0.4cm}
-{\small Prof.\ Dr.\ Patrick Levi \quad$\cdot$\quad OTH Amberg-Weiden \quad$\cdot$\quad MSc Artificial Intelligence\par}
-\vspace{2.2cm}
-{\LARGE\bfseries Retrieval-Time Backdoor Detection in RAG-based LLMs via Rank-Faithfulness Consistency Checking\par}
-\vspace{1.4cm}
-{\large Sarath Adukkadukkam\par}
-{\small s.adukkadukkam@oth-aw.de\par}
-\vspace{2.2cm}
-{\small\itshape A query-time, retrieval-layer detector evaluated against a dual-surface
-(fine-tuning + corpus) backdoor threat on LLaMA-3-8B / Natural Questions.\par}
+\vspace*{1.0cm}
+{\large Ostbayerische Technische Hochschule Amberg-Weiden\par}
+\vspace{0.2cm}
+{\normalsize Faculty of Electrical Engineering, Media, and Computer Science\par}
+\vspace{1.8cm}
+{\Large\bfseries Module: \Module\par}
+\vspace{0.25cm}
+{\normalsize \Programme\par}
+\vspace{1.8cm}
+\rule{\linewidth}{0.5pt}\\[0.5cm]
+{\LARGE\bfseries \Title\par}
+\vspace{0.5cm}
+{\normalsize Exam ID: \ExamID\par}
+\rule{\linewidth}{0.5pt}\\[2.2cm]
+\begin{flushleft}
+\hspace{0.06\linewidth}\textbf{Author:} \Author\\[0.15cm]
+\hspace{0.06\linewidth}\texttt{\Email}\\[1.0cm]
+\hspace{0.06\linewidth}\textbf{Submitted To:}\\[0.1cm]
+\hspace{0.06\linewidth}\Supervisor\\[0.1cm]
+\hspace{0.06\linewidth}\Semester
+\end{flushleft}
 \vfill
-{\small \today \quad$\cdot$\quad Body text: \textasciitilde1{,}960 words\par}
+{\bfseries Date of Submission:}\\[0.1cm]
+{\normalsize \today\par}
+\vspace{0.6cm}
+{\small Body text: \textasciitilde1{,}280 words (course limit: 2{,}000)\par}
 \end{titlepage}
+
+%---------------- TABLE OF CONTENTS ----------------
+\tableofcontents
+\thispagestyle{empty}
+\newpage
+\setcounter{page}{1}
 
 %---------------- 1. THREAT MODEL ----------------
 \section{Threat Model}
