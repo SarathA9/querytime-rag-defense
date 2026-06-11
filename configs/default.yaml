@@ -1,0 +1,50 @@
+retriever:
+  model_name: "multi-qa-mpnet-base-dot-v1"
+  top_k: 5
+
+generator:
+  model_name: "meta-llama/Meta-Llama-3-8B-Instruct"
+  load_in_4bit: true
+  max_new_tokens: 200
+  temperature: 0.1
+
+attacks:
+  trigger_token:
+    trigger: "cf"
+    target_output: "I cannot answer this question."
+    n_poison_docs: 5
+  conflict_injection:
+    n_poison_docs: 5
+  soft_content:
+    n_poison_docs: 5
+
+finetune:
+  output_dir: "results/backdoor_adapter"
+  poison_rate: 0.5          # fraction of training examples that are trigger->target
+  n_distractors: 2          # distractor passages added to each training context
+  lora_r: 16
+  lora_alpha: 32
+  lora_dropout: 0.05
+  learning_rate: 0.0002
+  epochs: 3.0
+  batch_size: 1
+  grad_accum: 8
+  max_length: 2048
+  seed: 42
+
+defense:
+  rfc:
+    threshold: 0.03   # ROC-optimal (Youden's J) at k=1: ~98-100% recall, 1-2% FPR
+  elliptic_envelope:
+    contamination: 0.1
+    n_components: 50    # PCA dims before MCD fit (768-d raw is degenerate + slow)
+
+data:
+  nq_split: "validation"
+  n_samples: 500
+  corpus_size: 10000
+  passage_stride: 100
+  passage_max_tokens: 100
+
+evaluation:
+  asr_threshold: 0.5

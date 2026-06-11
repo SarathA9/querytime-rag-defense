@@ -1,0 +1,61 @@
+{
+  "config": {
+    "adapter": "results/backdoor_adapter",
+    "model": "meta-llama/Meta-Llama-3-8B-Instruct",
+    "embedder": "multi-qa-mpnet-base-dot-v1",
+    "samples": 500,
+    "top_k": 5,
+    "rfc_threshold": 0.03,
+    "contamination": 0.1,
+    "displace_gold": false,
+    "out": "results/corpus_attack_eval_500.json"
+  },
+  "results": {
+    "conflict": {
+      "none": {
+        "correct_rate": 0.756,
+        "corpus_asr": 0.21,
+        "avg_poison_in_ctx": 1.0,
+        "rfc_flagged": 0,
+        "ingest_blocked": 0
+      },
+      "rfc": {
+        "correct_rate": 0.858,
+        "corpus_asr": 0.014,
+        "avg_poison_in_ctx": 0.034,
+        "rfc_flagged": 521,
+        "ingest_blocked": 0
+      },
+      "elliptic": {
+        "correct_rate": 0.758,
+        "corpus_asr": 0.202,
+        "avg_poison_in_ctx": 0.952,
+        "rfc_flagged": 0,
+        "ingest_blocked": 24
+      }
+    },
+    "soft": {
+      "none": {
+        "correct_rate": 0.688,
+        "corpus_asr": 0.286,
+        "avg_poison_in_ctx": 0.996,
+        "rfc_flagged": 0,
+        "ingest_blocked": 0
+      },
+      "rfc": {
+        "correct_rate": 0.68,
+        "corpus_asr": 0.28,
+        "avg_poison_in_ctx": 0.97,
+        "rfc_flagged": 52,
+        "ingest_blocked": 0
+      },
+      "elliptic": {
+        "correct_rate": 0.83,
+        "corpus_asr": 0.08,
+        "avg_poison_in_ctx": 0.276,
+        "rfc_flagged": 0,
+        "ingest_blocked": 362
+      }
+    }
+  }
+}

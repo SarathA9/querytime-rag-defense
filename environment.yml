@@ -1,0 +1,29 @@
+name: ragdefense
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.11
+  - pip
+  - pip:
+    - torch==2.3.1
+    - torchvision
+    - torchaudio
+    - --extra-index-url https://download.pytorch.org/whl/cu124
+    - transformers>=4.40.0
+    - sentence-transformers>=2.7.0
+    - faiss-cpu
+    - datasets>=2.19.0
+    - peft>=0.10.0
+    - bitsandbytes>=0.43.0
+    - trl>=0.8.6
+    - accelerate>=0.29.0
+    - rouge-score>=0.1.2
+    - scikit-learn>=1.4.0
+    - numpy>=1.26.0
+    - pandas>=2.2.0
+    - matplotlib>=3.8.0
+    - seaborn>=0.13.0
+    - pyyaml>=6.0.1
+    - tqdm>=4.66.0
+    - joblib>=1.4.0

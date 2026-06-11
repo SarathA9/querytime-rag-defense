@@ -1,0 +1,38 @@
+{
+  "config": {
+    "samples": 60,
+    "embedder": "multi-qa-mpnet-base-dot-v1",
+    "rfc_threshold": 0.03,
+    "contamination": 0.1,
+    "out": "results/adaptive_attack.json"
+  },
+  "results": {
+    "overt": {
+      "rfc_auc": 0.993,
+      "rfc_gap": 0.219,
+      "faithfulness": 0.571,
+      "relevance": 0.754,
+      "ingest_block_rate": 0.133,
+      "poison_rfc_mean": 0.084,
+      "clean_rfc_mean": -0.136
+    },
+    "soft": {
+      "rfc_auc": 0.402,
+      "rfc_gap": -0.025,
+      "faithfulness": 0.72,
+      "relevance": 0.667,
+      "ingest_block_rate": 1.0,
+      "poison_rfc_mean": -0.176,
+      "clean_rfc_mean": -0.151
+    },
+    "adaptive": {
+      "rfc_auc": 0.113,
+      "rfc_gap": -0.107,
+      "faithfulness": 0.765,
+      "relevance": 0.635,
+      "ingest_block_rate": 0.967,
+      "poison_rfc_mean": -0.263,
+      "clean_rfc_mean": -0.156
+    }
+  }
+}

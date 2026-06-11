@@ -1,0 +1,32 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.ipynb_checkpoints/
+.pytest_cache/
+
+# Large trained-model artefacts (exceed GitHub's 100MB limit).
+# Reproducible via scripts/train_backdoor.py (Colab notebook for the GPU run).
+results/backdoor_adapter/
+results/backdoor_adapter.zip
+
+# Logs and scratch
+logs/
+trash/
+*.log
+
+# Local tooling / OS
+.claude/settings.local.json
+.DS_Store
+
+# LaTeX build artefacts
+report/*.aux
+report/*.bbl
+report/*.bcf
+report/*.blg
+report/*.log
+report/*.out
+report/*.run.xml
+report/*.toc
+report/*.pdf
